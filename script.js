@@ -1,17 +1,16 @@
-function palindrome (myString) {
-    //in case if any special characters or spaces are given in input that has to be removed
-    var input = myString.replace(/[^A-Z0-9]/ig,"").toLowerCase();
+var myForm = document.getElementById("myForm");
+var myInput = document.getElementById("myInput")
+var myItem = document.getElementById("myItem")
 
-    //check palindrome or not not string needs to be rversed so we are reversing bit by splitting and joining it
-    var reversedinput = input.split("").reverse().join("");
+myForm.addEventListener("submit", function(event){
+    event.preventDefault();
+    createItem(myInput.value)
+})
 
-    //checking for palindrome
-    if (input === reversedinput) {
-        document.write("<div>" + myString + "is a palindrome <div>");
-    } else{
-        document.write("<div>" + myString + "is not a palindrome <div>");
-    }
+function createItem(inputItems){
+    var items = '<li>${inputItems}
+    <button onclick="deleteElement(this)">Delete</button> </li>
 }
 
-//invoking function
-palindrome("Ma")
+
+
